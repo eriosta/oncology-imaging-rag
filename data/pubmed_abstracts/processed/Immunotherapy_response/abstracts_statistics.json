@@ -1,0 +1,32 @@
+{
+  "total_abstracts": 4,
+  "total_documents": 4,
+  "total_chunks": 12,
+  "processing_date": "2025-10-18T16:09:45.736788",
+  "journal_distribution": {
+    "European radiology": 2,
+    "Clinical cancer research : an official journal of the American Association for Cancer Research": 1,
+    "Radiology": 1
+  },
+  "year_distribution": {
+    "2023": 3,
+    "2025": 1
+  },
+  "text_length_stats": {
+    "abstract": {
+      "min": 1348,
+      "max": 2434,
+      "avg": 1968.5
+    },
+    "title": {
+      "min": 63,
+      "max": 151,
+      "avg": 127.0
+    },
+    "chunk": {
+      "min": 244,
+      "max": 998,
+      "avg": 795.5833333333334
+    }
+  }
+}

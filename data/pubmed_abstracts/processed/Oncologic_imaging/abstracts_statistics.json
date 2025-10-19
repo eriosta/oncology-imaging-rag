@@ -1,0 +1,44 @@
+{
+  "total_abstracts": 1424,
+  "total_documents": 1424,
+  "total_chunks": 3920,
+  "processing_date": "2025-10-18T16:09:46.065569",
+  "journal_distribution": {
+    "European radiology": 881,
+    "Radiology": 281,
+    "Clinical cancer research : an official journal of the American Association for Cancer Research": 54,
+    "AJR. American journal of roentgenology": 45,
+    "European journal of cancer (Oxford, England : 1990)": 38,
+    "The Lancet. Oncology": 27,
+    "Journal of clinical oncology : official journal of the American Society of Clinical Oncology": 25,
+    "Journal of the National Cancer Institute": 23,
+    "JAMA oncology": 20,
+    "Cancer research": 13,
+    "Cancer discovery": 9,
+    "Annals of oncology : official journal of the European Society for Medical Oncology": 3,
+    "Cancer cell": 3,
+    "Nature reviews. Cancer": 2
+  },
+  "year_distribution": {
+    "2023": 520,
+    "2024": 480,
+    "2025": 424
+  },
+  "text_length_stats": {
+    "abstract": {
+      "min": 5,
+      "max": 4472,
+      "avg": 1839.936095505618
+    },
+    "title": {
+      "min": 0,
+      "max": 301,
+      "avg": 119.82724719101124
+    },
+    "chunk": {
+      "min": 20,
+      "max": 1044,
+      "avg": 799.9298469387755
+    }
+  }
+}

@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data files (large source files - don't commit to git)
+data/*/downloads_page.html
+data/*/*.zip
+data/*/*.pdf
+data/*/*.owl
+data/*/*.csv
+data/*/Loinc*.csv
+data/*/RadLex*.owl
+
+# Keep processed outputs (these are the RAG-ready files)
+!data/*/processed/*.json
+!data/*/processed/*.csv
+
+# Temporary files
+*.log
+*.tmp
+.DS_Store
+.cursor/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
+

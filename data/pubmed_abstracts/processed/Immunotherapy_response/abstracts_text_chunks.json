@@ -1,0 +1,86 @@
+[
+  {
+    "chunk_id": "PMID:39873753_chunk_0",
+    "pmid": "39873753",
+    "text": "Dual-energy CT iodine concentration as a biomarker for immunotherapy treatment response in metastatic melanoma and renal cell carcinoma patients.\n\nTo investigate the predictive value of tumor iodine concentration obtained with dual-energy CT (DECT) for treatment response in patients treated with immune checkpoint inhibitors (ICI).. Retrospective single-center study of consecutive metastatic melanoma and renal cell carcinoma (RCC) patients undergoing first-line ICI treatment.. The iodine concentration measurement time points include prior to initiation of therapy (baseline [BL]), after initiation (follow-up [FU1]), and either time point nearest to 12 months or at time of progression (final follow-up [FFU]).. Target lesion DECT-based whole-volume tumor normalized iodine concentration average (NICave) and size measurements were obtained.. Reference standard was individual lesion FFU status categorized as responders or nonresponders per RECIST 1.1..",
+    "chunk_index": 0,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:39873753_chunk_1",
+    "pmid": "39873753",
+    "text": "Dual-energy CT iodine concentration as a biomarker for immunotherapy treatment response in metastatic melanoma and renal cell carcinoma patients.\n\nLogistic regression model assessed NICave change and FU1 lesion response as predictors of FFU lesion outcome.. Model's performance was summarized with AUC.. Intraclass correlation coefficient (ICC) summarized inter-rater agreement of NICave.. Forty-six patients were included (mean age 61 ± 11 years, 12 women; 16 melanoma).. Sixty-four of 175 target lesions were confirmed nonresponders at FFU.. In a multivariable model, lesion status at FU1 (odds ratio [OR]: 27.4, p < 0.001) and changes in NICave from BL to FU1 (OR: 2.42 per 1-SD increase, p = 0.019) were significant predictors of lesion status at FFU.. The model's AUC was 0.86 (95% CI: 0.76-0.93).. Inter-rater reliability of NICave was 0.98 (95% CI: 0.97-0.99)..",
+    "chunk_index": 1,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:39873753_chunk_2",
+    "pmid": "39873753",
+    "text": "Dual-energy CT iodine concentration as a biomarker for immunotherapy treatment response in metastatic melanoma and renal cell carcinoma patients.\n\nChanges in iodine concentration from baseline to first follow-up improve identification of delayed responding metastatic melanoma and RCC lesions treated with immune checkpoint inhibitor, initially classified as nonresponders by size change.. Question How can pseudoprogression/delayed treatment response in metastatic renal cell carcinoma (RCC) and melanoma patients on first-line immune checkpoint inhibitors be accurately identified? Findings Combining iodine concentration change from Dual-energy CT (baseline to first follow-up) with RECIST-based lesion size change improved prediction of final lesion outcome..",
+    "chunk_index": 2,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:39873753_chunk_3",
+    "pmid": "39873753",
+    "text": "Dual-energy CT iodine concentration as a biomarker for immunotherapy treatment response in metastatic melanoma and renal cell carcinoma patients.\n\nClinical relevance DECT-based whole-volume tumor iodine concentration for target lesions is useful as a predictive imaging biomarker for distinguishing delayed response from true progression in patients with metastatic RCC and melanoma treated with first-line immune checkpoint inhibitors..",
+    "chunk_index": 3,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:37515634_chunk_0",
+    "pmid": "37515634",
+    "text": "Efficacy evaluation of neoadjuvant immunotherapy plus chemotherapy for non-small-cell lung cancer: comparison of PET/CT with postoperative pathology.\n\nTo assess the value of positron emission tomography/computed tomography (PET/CT) in the efficacy evaluation of patients undergoing neoadjuvant immunotherapy plus chemotherapy, and to analyze its correlation with postoperative pathology.. The PET/CT metabolic parameters and CT size were retrospectively analyzed before and after neoadjuvant immunotherapy plus chemotherapy in 67 patients with resectable stage II/IIIA non-small-cell lung cancer (NSCLC).. CT assessment based on immune response evaluation criteria in solid tumor criteria ((i)RECIST) was compared with PET/CT assessment based on the response criteria in solid tumors (PERCIST).. The correlations between PET/CT metabolic parameters and postoperative pathology were analyzed.. The value of PET/CT in the efficacy evaluation was assessed..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37515634_chunk_1",
+    "pmid": "37515634",
+    "text": "Efficacy evaluation of neoadjuvant immunotherapy plus chemotherapy for non-small-cell lung cancer: comparison of PET/CT with postoperative pathology.\n\nThe PET/CT assessment showed high consistency with postoperative pathological evaluation, yet the CT assessment showed low consistency with postoperative pathological evaluation.. The (i)RECIST and PERCIST criteria showed statistically significant differences (p < 0.001).. The postoperative pathological response was negatively associated with ΔSUV The PERCIST criteria are more sensitive and accurate than (i)RECIST criteria to identify more responders when evaluating the response of neoadjuvant immunotherapy plus chemotherapy for NSCLC.. PET/CT shows high accuracy in predicting postoperative pathological response.. Our study shows the important role PET/CT plays in the efficacy evaluation of NSCLC patients undergoing neoadjuvant immunotherapy plus chemotherapy, as well as in predicting the prognosis and guiding postoperative treatment..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37515634_chunk_2",
+    "pmid": "37515634",
+    "text": "Efficacy evaluation of neoadjuvant immunotherapy plus chemotherapy for non-small-cell lung cancer: comparison of PET/CT with postoperative pathology.\n\nNeoadjuvant immunotherapy plus chemotherapy is highly effective in the treatment of non-small-cell lung cancer.. And PET/CT played an important role in the efficacy evaluation following neoadjuvant immunotherapy plus chemotherapy for non-small-cell lung cancer.. • Neoadjuvant immunotherapy plus chemotherapy is highly effective in the treatment of NSCLC.. • The PERCIST criteria are more sensitive and accurate than (i)RECIST criteria to identify more responders when evaluating the response of neoadjuvant immunotherapy plus chemotherapy for NSCLC.. • PET/CT played an important role in the efficacy evaluation; ΔSUVmax (%), ΔSUVmean (%), and ΔSUVpeak (%) following neoadjuvant immunotherapy plus chemotherapy for NSCLC had high consistency and strong correlations with postoperative pathology..",
+    "chunk_index": 2,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:36719966_chunk_0",
+    "pmid": "36719966",
+    "text": "Better than RECIST and Faster than iRECIST: Defining the Immunotherapy Progression Decision Score to Better Manage Progressive Tumors on Immunotherapy.\n\nThe objective of the study is to propose the immunotherapy progression decision (iPD) score, a practical tool based on patient features that are available at the first evaluation of immunotherapy treatment, to help oncologists decide whether to continue the treatment or switch rapidly to another therapeutic line when facing a progressive disease patient at the first evaluation.. This retrospective study included 107 patients with progressive disease at first evaluation according to RECIST 1.1.. Clinical, radiological, and biological data at baseline and first evaluation were analyzed.. An external validation set consisting of 31 patients with similar baseline characteristics was used for the validation of the score.. Variables were analyzed in a univariate study..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:36719966_chunk_1",
+    "pmid": "36719966",
+    "text": "Better than RECIST and Faster than iRECIST: Defining the Immunotherapy Progression Decision Score to Better Manage Progressive Tumors on Immunotherapy.\n\nThe iPD score was constructed using only independent variables, each considered as a worsening factor for the survival of patients.. The patients were stratified in three groups: good prognosis (GP), poor prognosis (PP), and critical prognosis (CP).. Each group showed significantly different survivals (GP: 11.4, PP: 4.4, CP: 2.3 months median overall survival, P < 0.001, log-rank test).. Moreover, the iPD score was able to detect the pseudoprogressors better than other scores.. On the validation set, CP patients had significantly worse survival than PP and GP patients (P < 0.05, log-rank test).. The iPD score provides oncologists with a new evaluation, computable at first progression, to decide whether treatment should be continued (for the GP group), or immediately changed for the PP and CP groups..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:36719966_chunk_2",
+    "pmid": "36719966",
+    "text": "Better than RECIST and Faster than iRECIST: Defining the Immunotherapy Progression Decision Score to Better Manage Progressive Tumors on Immunotherapy.\n\nFurther validation on larger cohorts is needed to prove its efficacy in clinical practice..",
+    "chunk_index": 2,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:36472538_chunk_0",
+    "pmid": "36472538",
+    "text": "Emerging and Evolving Concepts in Cancer Immunotherapy Imaging.\n\nCriteria based on measurements of lesion diameter at CT have guided treatment with historical therapies due to the strong association between tumor size and survival.. Clinical experience with immune checkpoint modulators shows that editing immune system function can be effective in various solid tumors.. Equally, novel immune-related phenomena accompany this novel therapeutic paradigm.. These effects of immunotherapy challenge the association of tumor size with response or progression and include risks and adverse events that present new demands for imaging to guide treatment decisions.. Emerging and evolving approaches to immunotherapy highlight further key issues for imaging evaluation, such as dissociated response following local administration of immune checkpoint modulators, pseudoprogression due to immune infiltration in the tumor environment, and premature death due to hyperprogression..",
+    "chunk_index": 0,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:36472538_chunk_1",
+    "pmid": "36472538",
+    "text": "Emerging and Evolving Concepts in Cancer Immunotherapy Imaging.\n\nResearch that may offer tools for radiologists to meet these challenges is reviewed.. Different modalities are discussed, including immuno-PET, as well as new applications of CT, MRI, and fluorodeoxyglucose PET, such as radiomics and imaging of hematopoietic tissues or anthropometric characteristics.. Multilevel integration of imaging and other biomarkers may improve clinical guidance for immunotherapies and provide theranostic opportunities..",
+    "chunk_index": 1,
+    "total_chunks": 2
+  }
+]

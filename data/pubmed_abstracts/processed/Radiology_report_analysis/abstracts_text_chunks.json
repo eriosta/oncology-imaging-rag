@@ -1,0 +1,205 @@
+[
+  {
+    "chunk_id": "PMID:40892451_chunk_0",
+    "pmid": "40892451",
+    "text": "Comparison of a Specialized Large Language Model with GPT-4o for CT and MRI Radiology Report Summarization.\n\nBackground Although the general-purpose large language model (LLM) GPT-4o (OpenAI) has shown promise in radiology language processing, it remains unclear whether the performance of GPT-4o in report summarization is better than that of an LLM specifically designed for this task.. Purpose To compare the performance of a specialized LLM with that of GPT-4o in the comprehensive summarization of radiology reports.. Materials and Methods A specialized LLM for report summarization (LLM-RadSum) was developed using retrospectively collected reports from a hospital, divided into training and internal test sets (9:1 ratio).. The F1 scores based on the longest common subsequences were evaluated on the internal test set and an external test set of reports from four other hospitals.. Only CT and MRI reports containing findings and impressions sections were included..",
+    "chunk_index": 0,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:40892451_chunk_1",
+    "pmid": "40892451",
+    "text": "Comparison of a Specialized Large Language Model with GPT-4o for CT and MRI Radiology Report Summarization.\n\nFor comparison with GPT-4o, a human evaluation set included 1800 reports randomly selected from the internal and external test sets, ensuring balanced coverage of imaging modalities (CT, MRI) and anatomic sites (chest, neck, head, pelvis, abdomen, breast).. Three senior radiologists and two clinicians assessed this set, focusing on factual consistency, impression coherence, medical safety, and clinical use.. A.",
+    "chunk_index": 1,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39945809_chunk_0",
+    "pmid": "39945809",
+    "text": "RADEX: a rule-based clinical and radiology data extraction tool demonstrated on thyroid ultrasound reports.\n\nRadiology reports contain valuable information for research and audits, but relevant details are often buried within free-text fields.. This makes them challenging and time-consuming to extract for secondary analyses, including training artificial intelligence (AI) models.. This study presents a rule-based RAdiology Data EXtraction tool (RADEX) to enable biomedical researchers and healthcare professionals to automate information extraction from clinical documents.. RADEX simplifies the translation of domain expertise into regular-expression models, enabling context-dependent searching without specialist expertise in Natural Language Processing.. Its utility was demonstrated in the multi-label classification of fourteen clinical features in a large retrospective dataset (n = 16,246) of thyroid ultrasound reports from five hospitals in the United Kingdom (UK)..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:39945809_chunk_1",
+    "pmid": "39945809",
+    "text": "RADEX: a rule-based clinical and radiology data extraction tool demonstrated on thyroid ultrasound reports.\n\nA tuning subset (n = 200) was used to iteratively develop the search strategy, and a holdout test subset (n = 202) was used to evaluate the performance against reference-standard labels.. The dataset cardinality was 3.06, and the label density was 0.34.. Cohen's Kappa was 0.94 for rater 1 and 0.95 for rater 2.. For RADEX, micro-average sensitivity, specificity, and F1-score were 0.97, 0.96, and 0.94, respectively.. The processing time was 12.3 milliseconds per report, enabling fast and reliable information extraction.. RADEX is a versatile tool for bespoke research and audit applications, where access to labelled data or computing infrastructure is limited, or explainability and reproducibility are priorities.. This offers a time-saving and freely available option to accelerate structured data collection, enabling new insights and improved patient care..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:39945809_chunk_2",
+    "pmid": "39945809",
+    "text": "RADEX: a rule-based clinical and radiology data extraction tool demonstrated on thyroid ultrasound reports.\n\nQuestion Radiology reports contain vital information that is buried in unstructured free-text fields.. Can we extract this information effectively for research and audit applications? Findings A rule-based RAdiology Data Extraction tool (RADEX) is described and used to classify fourteen key findings from thyroid ultrasound reports with sensitivity and specificity > 0.95.. Clinical relevance RADEX offers clinicians and researchers a time-saving tool to accelerate structured data collection.. This practical approach prioritises transparency, repeatability, and usability, enabling new insights into improved patient care..",
+    "chunk_index": 2,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:39688492_chunk_0",
+    "pmid": "39688492",
+    "text": "Large Language Model Ability to Translate CT and MRI Free-Text Radiology Reports Into Multiple Languages.\n\nBackground High-quality translations of radiology reports are essential for optimal patient care.. Because of limited availability of human translators with medical expertise, large language models (LLMs) are a promising solution, but their ability to translate radiology reports remains largely unexplored.. Purpose To evaluate the accuracy and quality of various LLMs in translating radiology reports across high-resource languages (English, Italian, French, German, and Chinese) and low-resource languages (Swedish, Turkish, Russian, Greek, and Thai).. Materials and Methods A dataset of 100 synthetic free-text radiology reports from CT and MRI scans was translated by 18 radiologists between January 14 and May 2, 2024, into nine target languages.. Ten LLMs, including GPT-4 (OpenAI), Llama 3 (Meta), and Mixtral models (Mistral AI), were used for automated translation..",
+    "chunk_index": 0,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39688492_chunk_1",
+    "pmid": "39688492",
+    "text": "Large Language Model Ability to Translate CT and MRI Free-Text Radiology Reports Into Multiple Languages.\n\nTranslation accuracy and quality were assessed with use of BiLingual Evaluation Understudy (BLEU) score, translation error rate (TER), and CHaRacter-level F-score (chrF++) metrics.. Statistical significance was evaluated with use of paired.",
+    "chunk_index": 1,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39480533_chunk_0",
+    "pmid": "39480533",
+    "text": "Automated anonymization of radiology reports: comparison of publicly available natural language processing and large language models.\n\nMedical reports, governed by HIPAA regulations, contain personal health information (PHI), restricting secondary data use.. Utilizing natural language processing (NLP) and large language models (LLM), we sought to employ publicly available methods to automatically anonymize PHI in free-text radiology reports.. We compared two publicly available rule-based NLP models (spaCy; NLP NLP Pre-trained NLP models can effectively anonymize free-text radiology reports, while anonymization with the LLM model is more prone to deleting medical information.. Question This study compares NLP and locally hosted LLM techniques to ensure PHI anonymization without losing clinical information..",
+    "chunk_index": 0,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39480533_chunk_1",
+    "pmid": "39480533",
+    "text": "Automated anonymization of radiology reports: comparison of publicly available natural language processing and large language models.\n\nFindings Pre-trained NLP models effectively anonymized radiology reports without removing clinical data, while a locally hosted LLM was less reliable, risking the loss of important information.. Clinical relevance Fast, reliable, automated anonymization of PHI from radiology reports enables HIPAA-compliant secondary use, facilitating advanced applications like LLM-driven radiology analysis while ensuring ethical handling of sensitive patient data..",
+    "chunk_index": 1,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39470431_chunk_0",
+    "pmid": "39470431",
+    "text": "Comparing Commercial and Open-Source Large Language Models for Labeling Chest Radiograph Reports.\n\nBackground Rapid advances in large language models (LLMs) have led to the development of numerous commercial and open-source models.. While recent publications have explored OpenAI's GPT-4 to extract information of interest from radiology reports, there has not been a real-world comparison of GPT-4 to leading open-source models.. Purpose To compare different leading open-source LLMs to GPT-4 on the task of extracting relevant findings from chest radiograph reports.. Materials and Methods Two independent datasets of free-text radiology reports from chest radiograph examinations were used in this retrospective study performed between February 2, 2024, and February 14, 2024.. The first dataset consisted of reports from the ImaGenome dataset, providing reference standard annotations from the MIMIC-CXR database acquired between 2011 and 2016..",
+    "chunk_index": 0,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39470431_chunk_1",
+    "pmid": "39470431",
+    "text": "Comparing Commercial and Open-Source Large Language Models for Labeling Chest Radiograph Reports.\n\nThe second dataset consisted of randomly selected reports created at the Massachusetts General Hospital between July 2019 and July 2021.. In both datasets, the commercial models GPT-3.5 Turbo and GPT-4 were compared with open-source models that included Mistral-7B and Mixtral-8 × 7B (Mistral AI), Llama 2-13B and Llama 2-70B (Meta), and Qwen1.5-72B (Alibaba Group), as well as CheXbert and CheXpert-labeler (Stanford ML Group), in their ability to accurately label the presence of multiple findings in radiograph text reports using zero-shot and few-shot prompting.. The McNemar test was used to compare F1 scores between models.. Results On the ImaGenome dataset (.",
+    "chunk_index": 1,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:39287525_chunk_0",
+    "pmid": "39287525",
+    "text": "Constructing a Large Language Model to Generate Impressions from Findings in Radiology Reports.\n\nBackground The specialization and complexity of radiology makes the automatic generation of radiologic impressions (ie, a diagnosis with differential diagnosis and management recommendations) challenging.. Purpose To develop a large language model (LLM) that generates impressions based on imaging findings and to evaluate its performance in professional and linguistic dimensions.. Materials and Methods Six radiologists recorded imaging examination findings from August 2 to 31, 2023, at Shanghai General Hospital and used the developed LLM before routinely writing report impressions for multiple radiologic modalities (CT, MRI, radiography, mammography) and anatomic sites (cranium and face, neck, chest, upper abdomen, lower abdomen, vessels, bone and joint, spine, breast), making necessary corrections and completing the radiologic impression..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:39287525_chunk_1",
+    "pmid": "39287525",
+    "text": "Constructing a Large Language Model to Generate Impressions from Findings in Radiology Reports.\n\nA subset was defined to investigate cases where the LLM-generated impressions differed from the final radiologist impressions by excluding identical and highly similar cases.. An expert panel scored the LLM-generated impressions on a five-point Likert scale (5 = strongly agree) based on scientific terminology, coherence, specific diagnosis, differential diagnosis, management recommendations, correctness, comprehensiveness, harmlessness, and lack of bias.. Results In this retrospective study, an LLM was pretrained using 20 GB of medical and general-purpose text data.. The fine-tuning data set comprised 1.5 GB of data, including 800 radiology reports with paired instructions (describing the output task in natural language) and outputs.. Test set 2 included data from 3988 patients (median age, 56 years [IQR, 40-68 years]; 2159 male)..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:39287525_chunk_2",
+    "pmid": "39287525",
+    "text": "Constructing a Large Language Model to Generate Impressions from Findings in Radiology Reports.\n\nThe median recall, precision, and F1 score of LLM-generated impressions were 0.775 (IQR, 0.56-1), 0.84 (IQR, 0.611-1), and 0.772 (IQR, 0.578-0.957), respectively, using the final impressions as the reference standard.. In a subset of 1014 patients (median age, 57 years [IQR, 42-69 years]; 528 male), the overall median expert panel score for LLM-generated impressions was 5 (IQR, 5-5), ranging from 4 (IQR, 3-5) to 5 (IQR, 5-5).. Conclusion The developed LLM generated radiologic impressions that were professionally and linguistically appropriate for a full spectrum of radiology examinations.. © RSNA, 2024.",
+    "chunk_index": 2,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:38888478_chunk_0",
+    "pmid": "38888478",
+    "text": "Large Language Models for Automated Synoptic Reports and Resectability Categorization in Pancreatic Cancer.\n\nBackground Structured radiology reports for pancreatic ductal adenocarcinoma (PDAC) improve surgical decision-making over free-text reports, but radiologist adoption is variable.. Resectability criteria are applied inconsistently.. Purpose To evaluate the performance of large language models (LLMs) in automatically creating PDAC synoptic reports from original reports and to explore performance in categorizing tumor resectability.. Materials and Methods In this institutional review board-approved retrospective study, 180 consecutive PDAC staging CT reports on patients referred to the authors' European Society for Medical Oncology-designated cancer center from January to December 2018 were included.. Reports were reviewed by two radiologists to establish the reference standard for 14 key findings and National Comprehensive Cancer Network (NCCN) resectability category..",
+    "chunk_index": 0,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:38888478_chunk_1",
+    "pmid": "38888478",
+    "text": "Large Language Models for Automated Synoptic Reports and Resectability Categorization in Pancreatic Cancer.\n\nGPT-3.5 and GPT-4 (accessed September 18-29, 2023) were prompted to create synoptic reports from original reports with the same 14 features, and their performance was evaluated (recall, precision, F1 score).. To categorize resectability, three prompting strategies (default knowledge, in-context knowledge, chain-of-thought) were used for both LLMs.. Hepatopancreaticobiliary surgeons reviewed original and artificial intelligence (AI)-generated reports to determine resectability, with accuracy and review time compared.. The McNemar test,.",
+    "chunk_index": 1,
+    "total_chunks": 2
+  },
+  {
+    "chunk_id": "PMID:37665389_chunk_0",
+    "pmid": "37665389",
+    "text": "Natural language processing deep learning models for the differential between high-grade gliomas and metastasis: what if the key is how we report them?\n\nThe differential between high-grade glioma (HGG) and metastasis remains challenging in common radiological practice.. We compare different natural language processing (NLP)-based deep learning models to assist radiologists based on data contained in radiology reports.. This retrospective study included 185 MRI reports between 2010 and 2022 from two different institutions.. A total of 117 reports were used for the training and 21 were reserved for the validation set, while the rest were used as a test set.. A comparison of the performance of different deep learning models for HGG and metastasis classification has been carried out..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37665389_chunk_1",
+    "pmid": "37665389",
+    "text": "Natural language processing deep learning models for the differential between high-grade gliomas and metastasis: what if the key is how we report them?\n\nSpecifically, Convolutional Neural Network (CNN), Bidirectional Long Short-Term Memory (BiLSTM), a hybrid version of BiLSTM and CNN, and a radiology-specific Bidirectional Encoder Representations from Transformers (RadBERT) model were used.. For the classification of MRI reports, the CNN network provided the best results among all tested, showing a macro-avg precision of 87.32%, a sensitivity of 87.45%, and an F1 score of 87.23%.. In addition, our NLP algorithm detected keywords such as tumor, temporal, and lobe to positively classify a radiological report as HGG or metastasis group.. A deep learning model based on CNN enables radiologists to discriminate between HGG and metastasis based on MRI reports with high-precision values.. This approach should be considered an additional tool in diagnosing these central nervous system lesions..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37665389_chunk_2",
+    "pmid": "37665389",
+    "text": "Natural language processing deep learning models for the differential between high-grade gliomas and metastasis: what if the key is how we report them?\n\nThe use of our NLP model enables radiologists to differentiate between patients with high-grade glioma and metastasis based on their MRI reports and can be used as an additional tool to the conventional image-based approach for this challenging task.. • Differential between high-grade glioma and metastasis is still challenging in common radiological practice.. • Natural language processing (NLP)-based deep learning models can assist radiologists based on data contained in radiology reports.. • We have developed and tested a natural language processing model for discriminating between high-grade glioma and metastasis based on MRI reports that show high precision for this task..",
+    "chunk_index": 2,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37566271_chunk_0",
+    "pmid": "37566271",
+    "text": "Natural language processing to predict isocitrate dehydrogenase genotype in diffuse glioma using MR radiology reports.\n\nTo evaluate the performance of natural language processing (NLP) models to predict isocitrate dehydrogenase (IDH) mutation status in diffuse glioma using routine MR radiology reports.. This retrospective, multi-center study included consecutive patients with diffuse glioma with known IDH mutation status from May 2009 to November 2021 whose initial MR radiology report was available prior to pathologic diagnosis.. Five NLP models (long short-term memory [LSTM], bidirectional LSTM, bidirectional encoder representations from transformers [BERT], BERT graph convolutional network [GCN], BioBERT) were trained, and area under the receiver operating characteristic curve (AUC) was assessed to validate prediction of IDH mutation status in the internal and external validation sets.. The performance of the best performing NLP model was compared with that of the human readers..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37566271_chunk_1",
+    "pmid": "37566271",
+    "text": "Natural language processing to predict isocitrate dehydrogenase genotype in diffuse glioma using MR radiology reports.\n\nA total of 1427 patients (mean age ± standard deviation, 54 ± 15; 779 men, 54.6%) with 720 patients in the training set, 180 patients in the internal validation set, and 527 patients in the external validation set were included.. In the external validation set, BERT GCN showed the highest performance (AUC 0.85, 95% CI 0.81-0.89) in predicting IDH mutation status, which was higher than LSTM (AUC 0.77, 95% CI 0.72-0.81; p = .003) and BioBERT (AUC 0.81, 95% CI 0.76-0.85; p = .03).. This was higher than that of a neuroradiologist (AUC 0.80, 95% CI 0.76-0.84; p = .005) and a neurosurgeon (AUC 0.79, 95% CI 0.76-0.84; p = .04).. BERT GCN was externally validated to predict IDH mutation status in patients with diffuse glioma using routine MR radiology reports with superior or at least comparable performance to human reader..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37566271_chunk_2",
+    "pmid": "37566271",
+    "text": "Natural language processing to predict isocitrate dehydrogenase genotype in diffuse glioma using MR radiology reports.\n\nNatural language processing may be used to extract relevant information from routine radiology reports to predict cancer genotype and provide prognostic information that may aid in guiding treatment strategy and enabling personalized medicine.. • A transformer-based natural language processing (NLP) model predicted isocitrate dehydrogenase mutation status in diffuse glioma with an AUC of 0.85 in the external validation set.. • The best NLP models were superior or at least comparable to human readers in both internal and external validation sets.. • Transformer-based models showed higher performance than conventional NLP model such as long short-term memory..",
+    "chunk_index": 2,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37542652_chunk_0",
+    "pmid": "37542652",
+    "text": "Investigating the impact of structured reporting on the linguistic standardization of radiology reports through natural language processing over a 10-year period.\n\nTo investigate how a transition from free text to structured reporting affects reporting language with regard to standardization and distinguishability.. A total of 747,393 radiology reports dictated between January 2011 and June 2020 were retrospectively analyzed.. The body and cardiothoracic imaging divisions introduced a reporting concept using standardized language and structured reporting templates in January 2016.. Reports were segmented by a natural language processing algorithm and converted into a 20-dimension document vector.. For analysis, dimensionality was reduced to a 2D visualization with t-distributed stochastic neighbor embedding and matched with metadata.. Linguistic standardization was assessed by comparing distinct report types' vector spreads (e.g., run-off MR angiography) between reporting standards..",
+    "chunk_index": 0,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:37542652_chunk_1",
+    "pmid": "37542652",
+    "text": "Investigating the impact of structured reporting on the linguistic standardization of radiology reports through natural language processing over a 10-year period.\n\nChanges in report type distinguishability (e.g., CT abdomen/pelvis vs.. MR abdomen) were measured by comparing the distance between their centroids.. Structured reports showed lower document vector spread (thus higher linguistic similarity) compared with free-text reports overall (21.9 [free-text] vs.. 15.9 [structured]; - 27.4%; p < 0.001) and for most report types, e.g., run-off MR angiography (15.2 vs.. 1.8; - 88.2%; p < 0.001) or double-rule-out CT (26.8 vs.. 10.0; - 62.7%; p < 0.001).. No changes were observed for reports continued to be written in free text, e.g., CT head reports (33.2 vs.. 33.1; - 0.3%; p = 1).. Distances between the report types' centroids increased with structured reporting (thus better linguistic distinguishability) overall (27.3 vs..",
+    "chunk_index": 1,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:37542652_chunk_2",
+    "pmid": "37542652",
+    "text": "Investigating the impact of structured reporting on the linguistic standardization of radiology reports through natural language processing over a 10-year period.\n\n54.4; + 99.3 ± 98.4%) and for specific report types, e.g., CT abdomen/pelvis vs.. MR abdomen (13.7 vs.. 37.2; + 171.5%).. Structured reporting and the use of factual language yield more homogenous and standardized radiology reports on a linguistic level, tailored to specific reporting scenarios and imaging studies.. Information transmission to referring physicians, as well as automated report assessment and content extraction in big data analyses, may benefit from standardized reporting, due to consistent report organization and terminology used for pathologies and normal findings.. • Natural language processing and t-distributed stochastic neighbor embedding can transform radiology reports into numeric vectors, allowing the quantification of their linguistic standardization..",
+    "chunk_index": 2,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:37542652_chunk_3",
+    "pmid": "37542652",
+    "text": "Investigating the impact of structured reporting on the linguistic standardization of radiology reports through natural language processing over a 10-year period.\n\n• Structured reporting substantially increases reports' linguistic standardization (mean: - 27.4% in vector spread) and distinguishability (mean: + 99.3 ± 98.4% increase in vector distance) compared with free-text reports.. • Higher standardization and homogeneity outline potential benefits of structured reporting for information transmission and big data analyses..",
+    "chunk_index": 3,
+    "total_chunks": 4
+  },
+  {
+    "chunk_id": "PMID:37505252_chunk_0",
+    "pmid": "37505252",
+    "text": "Information extraction from weakly structured radiological reports with natural language queries.\n\nProvide physicians and researchers an efficient way to extract information from weakly structured radiology reports with natural language processing (NLP) machine learning models.. We evaluate seven different German bidirectional encoder representations from transformers (BERT) models on a dataset of 857,783 unlabeled radiology reports and an annotated reading comprehension dataset in the format of SQuAD 2.0 based on 1223 additional reports.. Continued pre-training of a BERT model on the radiology dataset and a medical online encyclopedia resulted in the most accurate model with an F1-score of 83.97% and an exact match score of 71.63% for answerable questions and 96.01% accuracy in detecting unanswerable questions.. Fine-tuning a non-medical model without further pre-training led to the lowest-performing model..",
+    "chunk_index": 0,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37505252_chunk_1",
+    "pmid": "37505252",
+    "text": "Information extraction from weakly structured radiological reports with natural language queries.\n\nThe final model proved stable against variation in the formulations of questions and in dealing with questions on topics excluded from the training set.. General domain BERT models further pre-trained on radiological data achieve high accuracy in answering questions on radiology reports.. We propose to integrate our approach into the workflow of medical practitioners and researchers to extract information from radiology reports.. By reducing the need for manual searches of radiology reports, radiologists' resources are freed up, which indirectly benefits patients.. • BERT models pre-trained on general domain datasets and radiology reports achieve high accuracy (83.97% F1-score) on question-answering for radiology reports.. • The best performing model achieves an F1-score of 83.97% for answerable questions and 96.01% accuracy for questions without an answer..",
+    "chunk_index": 1,
+    "total_chunks": 3
+  },
+  {
+    "chunk_id": "PMID:37505252_chunk_2",
+    "pmid": "37505252",
+    "text": "Information extraction from weakly structured radiological reports with natural language queries.\n\n• Additional radiology-specific pretraining of all investigated BERT models improves their performance..",
+    "chunk_index": 2,
+    "total_chunks": 3
+  }
+]
