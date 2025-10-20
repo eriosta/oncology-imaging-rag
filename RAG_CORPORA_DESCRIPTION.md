@@ -5,8 +5,9 @@
 This repository contains a comprehensive, RAG-ready corpus focused on **oncologic imaging** and **response assessment** in cancer treatment. The data spans medical terminology, clinical guidelines, and current research literature, providing a robust foundation for retrieval-augmented generation systems.
 
 **Last Updated:** October 2025  
-**Total Documents:** ~31,500  
-**Total Text Chunks:** ~5,000  
+**Total Documents:** ~321,000  
+**Total Text Chunks:** ~650,000  
+**Temporal Coverage:** 1968-2025 (57 years)  
 **Focus Areas:** Radiology, oncology, imaging response criteria, tumor assessment
 
 ---
@@ -127,70 +128,71 @@ Response Evaluation Criteria In Solid Tumours (RECIST) version 1.1 is the intern
 
 ---
 
-## 4. PubMed Research Literature (2023-2025)
+## 4. PubMed Research Literature (1968-2025)
 
 **Source:** PubMed abstracts via NCBI E-utilities  
 **Location:** `data/pubmed_abstracts/processed/`
 
 ### Description
-Current research literature from top-tier oncology and radiology journals, covering recent advances in cancer imaging, response assessment, and treatment monitoring.
+**Comprehensive historical research literature** from top-tier oncology and radiology journals, providing both foundational knowledge and cutting-edge research spanning nearly 6 decades.
 
 ### Content
-- **1,767 abstracts** from 2023-2025
-- **14 premier journals** including:
-  1. **European Radiology** - 941 abstracts
-  2. **Radiology** - 299 abstracts
-  3. **Clinical Cancer Research** - 152 abstracts
-  4. **European Journal of Cancer** - 78 abstracts
-  5. **Journal of Clinical Oncology** - 78 abstracts
-  6. **American Journal of Roentgenology** - 46 abstracts
-  7. **The Lancet Oncology** - 42 abstracts
-  8. **JAMA Oncology** - 38 abstracts
-  9. Plus Nature, Cancer Cell, Cancer Research, and more
+- **292,298 abstracts** from 1968-2025 (all time coverage)
+- **29 premier journals** including:
+  1. **Cancer Research** - 45,851 abstracts
+  2. **Cancer** - 36,724 abstracts
+  3. **Cancers** - 31,208 abstracts
+  4. **Int. J. Radiation Oncology** - 23,076 abstracts
+  5. **British Journal of Cancer** - 22,538 abstracts
+  6. **Gynecologic Oncology** - 15,538 abstracts
+  7. **European Radiology** - 9,999 abstracts
+  8. **Radiology** - 9,928 abstracts
+  9. **AJR** - 8,647 abstracts
+  10. Plus Lancet Oncology, JAMA Oncology, Nature Reviews, Cancer Cell, and more
 
-### Query Categories
+### Journal Categories
 
-#### a. **Oncologic Imaging** (1,424 abstracts)
-General cancer imaging research across all modalities
+#### a. **RSNA Journals** (5 journals, ~21K abstracts)
+- Radiology, Radiographics, Radiology: AI, Radiology: Cardiothoracic Imaging, Radiology: Imaging Cancer
 
-#### b. **RECIST Response Assessment** (304 abstracts)
-Studies specifically about RECIST criteria, tumor measurement, and response evaluation
+#### b. **Top Radiology Journals** (10 journals, ~75K abstracts)
+- European Radiology, AJR, Clinical Radiology, Investigative Radiology, Skeletal Radiology, and more
 
-#### c. **Immunotherapy Response** (4 abstracts)
-Imaging response to immunotherapy (iRECIST, irRC, immune-related patterns)
+#### c. **Oncology Journals** (14 journals, ~196K abstracts)
+- Cancer Research, Cancer, British Journal of Cancer, Lancet Oncology, JAMA Oncology, and more
 
-#### d. **PET Response Criteria** (6 abstracts)
-PET-specific response criteria (PERCIST, Deauville, etc.)
-
-#### e. **Radiology Report Analysis** (11 abstracts)
-Natural language processing and structured reporting
-
-#### f. **Temporal Progression** (18 abstracts)
-Longitudinal imaging and disease progression tracking
-
-### Temporal Coverage
-- **2023:** 643 abstracts
-- **2024:** 589 abstracts
-- **2025:** 535 abstracts (through October)
+### Temporal Coverage (Historical to Current)
+- **1968-1974:** 515 abstracts (early foundations)
+- **1975-1989:** 38,467 abstracts (growth period)
+- **1990-1999:** 43,010 abstracts (expansion)
+- **2000-2009:** 66,057 abstracts (digital era)
+- **2010-2019:** 79,417 abstracts (modern advances)
+- **2020-2025:** 64,832 abstracts (current research)
+  - **2023:** 12,048 abstracts
+  - **2024:** 10,353 abstracts  
+  - **2025:** 8,928 abstracts (through October)
 
 ### RAG Format
 - **Structure:**
   - Title + Abstract combined for full searchable text
   - PMID for unique identification
-  - Journal, year, authors in metadata
-  - 4,899 optimized text chunks (avg 800 chars)
+  - DOI, journal, year, authors, volume, issue in metadata
+  - 643,910 optimized text chunks (avg 764 chars)
 
-- **Files per category:**
-  - `abstracts_rag_documents.json` - Full documents with metadata
-  - `abstracts_text_chunks.json` - Embeddings-optimized chunks
-  - `abstracts_statistics.json` - Processing metadata
-  - `abstracts_for_rag.csv` - Human-readable format
+- **Files (unified across all journals):**
+  - `pubmed_abstracts_rag_documents.json` - 292,298 full documents with metadata
+  - `pubmed_abstracts_text_chunks.json` - 643,910 embeddings-optimized chunks
+  - `pubmed_abstracts_statistics.json` - Processing metadata with distributions
+  - `pubmed_abstracts_for_rag.csv` - Human-readable format for review
 
 ### Use Cases
-- Finding recent research on specific imaging topics
-- Understanding current best practices
-- Discovering novel imaging biomarkers
-- Tracking research trends and methodologies
+- **Historical Context:** Access foundational papers that established current standards
+- **Recent Research:** Find cutting-edge advances from 2023-2025
+- **Longitudinal Analysis:** Track evolution of imaging techniques across decades
+- **Comprehensive Search:** Query across 57 years of medical literature
+- **Best Practices:** Understand both historical development and current standards
+- **Novel Biomarkers:** Discover emerging imaging biomarkers
+- **Trend Analysis:** Track research trends and methodologies over time
 
 ---
 
@@ -232,33 +234,33 @@ For embedding optimization:
 
 ## Processing Scripts
 
-### `fetch_rad_corpora.py`
-Fetches and downloads source data:
-- PubMed abstracts via NCBI E-utilities
-- Handles LOINC zip extraction
-- Manages RadLex OWL files
-- Downloads clinical guideline PDFs
+### `rag_pipeline.py` (Main Pipeline)
+**Consolidated OOP-based pipeline** that handles all data fetching and processing:
 
-### `process_rad_data_for_rag.py`
-Processes terminology data:
-- Parses RadLex OWL ontology
-- Extracts LOINC procedure codes
-- Enriches with synonyms and mappings
-- Generates RAG-ready JSON documents
+**Fetching:**
+- PubMed journal abstracts via NCBI E-utilities (all time coverage)
+- RadLex OWL ontology files
+- LOINC Radiology Playbook extraction
+- RECIST and iRECIST guideline PDFs
 
-### `process_pdfs_for_rag.py`
-Processes PDF documents:
-- Extracts text from clinical guidelines
-- Detects sections and paragraphs
-- Creates optimized text chunks
-- Preserves document structure
+**Processing:**
+- PubMed abstracts → RAG documents and text chunks
+- PDF guidelines → chunked RAG documents
+- Smart skip logic (automatically skips already downloaded/processed data)
 
-### `process_abstracts_for_rag.py`
-Processes literature abstracts:
-- Combines title + abstract text
-- Chunks longer abstracts intelligently
-- Generates statistics and distributions
-- Creates both document and chunk formats
+**Features:**
+- Clean OOP architecture with modular classes
+- Automatic detection of existing data (no redundant work)
+- Simple CLI with multiple operation modes
+- Comprehensive error handling and logging
+
+### `process_rad_data_for_rag.py` (Terminology Processing)
+**Specialized processor for RadLex and LOINC**:
+- Parses RadLex OWL ontology (full XML parsing)
+- Extracts LOINC procedure codes with enrichment
+- Processes synonyms and hierarchical relationships
+- Generates comprehensive RAG-ready JSON documents
+- Can be run standalone or integrated with main pipeline
 
 ---
 
@@ -297,35 +299,63 @@ Processes literature abstracts:
 
 | Corpus | Documents | Additional Metrics | Text Chunks |
 |--------|-----------|-------------------|-------------|
-| **RadLex** | 22,747 terms | 1,800 definitions, 8,237 synonyms | N/A |
-| **LOINC** | 6,973 procedures | 190,215 synonyms, full RadLex mapping | N/A |
+| **RadLex** | 22,747 terms | 1,800 definitions, 8,237 synonyms | ~22,747 |
+| **LOINC** | 6,973 procedures | 190,215 synonyms, full RadLex mapping | ~6,973 |
 | **RECIST 1.1** | 79 chunks | 20 pages, 43 sections | 79 |
-| **PubMed** | 1,767 abstracts | 14 journals, 2023-2025 | 4,899 |
-| **TOTAL** | **~31,566** | | **~4,978** |
+| **PubMed** | 292,298 abstracts | 29 journals, 1968-2025, 57 years | 643,910 |
+| **TOTAL** | **~322,097** | | **~673,709** |
 
 ---
 
 ## Maintenance
 
-### Updating Literature
+### Quick Start
 ```bash
-# Fetch latest abstracts (runs all recommended queries)
-python fetch_rad_corpora.py --pubmed
+# Fetch and process everything (first time)
+python rag_pipeline.py --all
 
-# Process new abstracts
-python process_abstracts_for_rag.py
+# Update with new data (automatically skips existing)
+python rag_pipeline.py --all
 ```
 
-### Adding Custom Queries
-Edit `RECOMMENDED_QUERIES` in `fetch_rad_corpora.py` or use:
+### Updating Literature
 ```bash
-python fetch_rad_corpora.py --freeform "your custom query here"
+# Fetch latest journal abstracts (skips existing journals)
+python rag_pipeline.py fetch-journals
+
+# Process new abstracts (skips if already processed)
+python rag_pipeline.py process-abstracts
+```
+
+### Selective Operations
+```bash
+# Fetch only
+python rag_pipeline.py --fetch-only
+
+# Process only (data already fetched)
+python rag_pipeline.py --process-only
+
+# Specific components
+python rag_pipeline.py fetch-terminology
+python rag_pipeline.py process-pdfs
 ```
 
 ### Updating Terminology
-- RadLex: Download new OWL file from radlex.org
-- LOINC: Download new zip from loinc.org
-- Rerun processing scripts
+```bash
+# Download new RadLex/LOINC files
+python rag_pipeline.py fetch-terminology
+
+# Process with full parser
+python process_rad_data_for_rag.py
+```
+
+### Force Reprocessing
+To force reprocessing of existing data:
+1. Delete the specific output file (e.g., `pubmed_abstracts_rag_documents.json`)
+2. Run the pipeline again - it will regenerate
+
+### Adding Custom Journals
+Edit the `RSNA_JOURNALS`, `TOP_RAD_JOURNALS`, or `ONCOLOGY_JOURNALS` lists in the `Config` class of `rag_pipeline.py`
 
 ---
 
@@ -356,12 +386,39 @@ python fetch_rad_corpora.py --freeform "your custom query here"
 
 ---
 
+## Pipeline Features
+
+### Smart Skip Logic
+The pipeline automatically detects and skips:
+- ✅ Already downloaded journal CSVs
+- ✅ Already fetched RadLex/LOINC files
+- ✅ Already downloaded PDFs
+- ✅ Already processed abstracts
+- ✅ Already processed guidelines
+
+**Result:** Second run completes in seconds (vs hours first time)
+
+### Incremental Updates
+```bash
+# Fetch new journals (skips existing)
+python rag_pipeline.py fetch-journals
+
+# Process only new abstracts
+python rag_pipeline.py process-abstracts
+```
+
+### Resume Capability
+Interrupted pipelines can resume from where they stopped - no need to restart from scratch.
+
 ## Contact & Support
 
 For questions about this corpus or to report issues:
-- Review processing scripts for implementation details
+- Review `rag_pipeline.py` for implementation details
 - Check `*_statistics.json` files for data quality metrics
-- Regenerate processed data if source files are updated
+- Use `--help` flag for usage information
+- Regenerate processed data by deleting output files and re-running
 
 **Domain Focus:** Oncologic imaging, tumor response assessment, radiology terminology, clinical trial standards
+
+**Repository:** Consolidated OOP-based pipeline with smart skip logic and comprehensive error handling
 

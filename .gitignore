@@ -4,9 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
 build/
 develop-eggs/
 dist/
@@ -23,30 +20,40 @@ wheels/
 .installed.cfg
 *.egg
 
-# Data files (large source files - don't commit to git)
-data/*/downloads_page.html
-data/*/*.zip
-data/*/*.pdf
-data/*/*.owl
-data/*/*.csv
-data/*/Loinc*.csv
-data/*/RadLex*.owl
-
-# Keep processed outputs (these are the RAG-ready files)
-!data/*/processed/*.json
-!data/*/processed/*.csv
-
-# Temporary files
-*.log
-*.tmp
-.DS_Store
-.cursor/
+# Virtual environments
+venv/
+ENV/
+env/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
-# Environment variables
-.env
-.env.local
+# Data files (keep structure but ignore large files)
+data/radlex/*.owl
+data/radlex/*.xlsx
+data/radlex/*.json
+data/radlex/*.zip
+data/loinc/*.zip
+data/loinc/*.csv
+!data/loinc/LoincRsnaRadiologyPlaybookReadMe.txt
+data/guidelines/*.pdf
+data/pubmed_abstracts/*.csv
 
+# Keep processed directories but ignore their large JSON files
+data/**/processed/*.json
+data/**/processed/*.csv
+!data/**/processed/*_statistics.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Temporary files
+*.tmp
+*.log
+out_pubmed_multi/
