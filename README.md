@@ -48,6 +48,13 @@ This pipeline integrates data from multiple authoritative medical sources:
 - Guidelines for response assessment during immunotherapy
 - Source: PMC/Lancet Oncology
 
+### 6. **TNM Cancer Staging 9th Edition** (44 chunks, 44 pages)
+- AJCC/UICC TNM Classification of Malignant Tumours (2024)
+- Global standard for cancer staging
+- T (tumor), N (node), M (metastasis) definitions
+- Site-specific staging criteria for major cancer types
+- Source: AJCC Staging Cards
+
 ## Output Format
 
 All data is processed into two RAG-optimized formats:
@@ -73,9 +80,10 @@ See [`RAG_CORPORA_DESCRIPTION.md`](RAG_CORPORA_DESCRIPTION.md) for detailed data
 | `fetch_and_process_all.py` | Master orchestration script | Runs all fetch and process steps |
 | `fetch_journals.py` | Fetch journal abstracts (all time) | CSV files per journal |
 | `fetch_rad_corpora.py` | Fetch terminology & guidelines | Raw OWL, CSV, PDF files |
-| `process_abstracts_for_rag.py` | Process abstracts | RAG-ready JSON documents |
+| `rag_pipeline.py process-abstracts` | Process abstracts | RAG-ready JSON documents |
 | `process_rad_data_for_rag.py` | Process RadLex & LOINC | RAG-ready JSON documents |
-| `process_pdfs_for_rag.py` | Process PDF guidelines | RAG-ready JSON chunks |
+| `rag_pipeline.py process-pdfs` | Process RECIST guidelines | RAG-ready JSON chunks |
+| `rag_pipeline.py process-tnm` | Process TNM staging | RAG-ready JSON chunks |
 
 ## Requirements
 
@@ -122,17 +130,19 @@ oncology-imaging-rag/
 - **Clinical Decision Support**: Reference standardized terminology and guidelines
 - **Research Literature Search**: Semantic search across oncology and radiology papers
 - **Tumor Response Assessment**: Query RECIST criteria and response evaluation protocols
+- **Cancer Staging**: Accurate TNM staging determination and classification
 - **Terminology Standardization**: Map varied medical terms to standard RadLex/LOINC codes
 - **Historical Analysis**: Track evolution of medical concepts from 1968 to present
 
 ## Data Statistics
 
-- **Total Documents**: ~321,000
-- **Total Text Chunks**: ~650,000
+- **Total Documents**: ~322,000
+- **Total Text Chunks**: ~674,000
 - **Temporal Coverage**: 1968-2025 (57 years)
 - **Journals**: 29 major oncology and radiology journals
 - **RadLex Terms**: 22,747 with 8,200+ synonyms
 - **LOINC Procedures**: 6,973 with 190,000+ synonyms
+- **TNM Staging**: 9th Edition (2024) complete staging criteria
 
 ## Data Quality
 
@@ -177,3 +187,4 @@ For questions or issues:
 - ✅ RadLex 22,747 terms ready
 - ✅ LOINC 6,973 procedures with synonyms ready
 - ✅ RECIST 1.1 guidelines processed
+- ✅ TNM 9th Edition staging cards processed (44 chunks)

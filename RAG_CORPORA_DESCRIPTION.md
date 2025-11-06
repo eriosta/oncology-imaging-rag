@@ -5,10 +5,10 @@
 This repository contains a comprehensive, RAG-ready corpus focused on **oncologic imaging** and **response assessment** in cancer treatment. The data spans medical terminology, clinical guidelines, and current research literature, providing a robust foundation for retrieval-augmented generation systems.
 
 **Last Updated:** October 2025  
-**Total Documents:** ~321,000  
-**Total Text Chunks:** ~650,000  
+**Total Documents:** ~322,000  
+**Total Text Chunks:** ~674,000  
 **Temporal Coverage:** 1968-2025 (57 years)  
-**Focus Areas:** Radiology, oncology, imaging response criteria, tumor assessment
+**Focus Areas:** Radiology, oncology, imaging response criteria, tumor assessment, cancer staging
 
 ---
 
@@ -128,7 +128,45 @@ Response Evaluation Criteria In Solid Tumours (RECIST) version 1.1 is the intern
 
 ---
 
-## 4. PubMed Research Literature (1968-2025)
+## 4. TNM Cancer Staging (9th Edition, 2024)
+
+**Source:** AJCC/UICC TNM Staging Cards  
+**Location:** `data/tnm9ed/processed/`
+
+### Description
+The TNM Classification of Malignant Tumours (9th Edition, 2024) is the global standard for cancer staging, used by clinicians and researchers worldwide to describe the extent of cancer spread and guide treatment decisions.
+
+### Content
+- **44 pages** of comprehensive staging information
+- **44 text chunks** covering:
+  - TNM staging classifications for major cancer types
+  - Anatomical stage groups and prognostic stage groups
+  - Staging definitions (T, N, M categories)
+  - Site-specific staging criteria
+  - Updates and revisions in 9th edition
+
+### Structure
+- Extracted from official AJCC staging cards PDF
+- Organized by cancer site and stage
+- Includes detailed T (tumor), N (node), M (metastasis) definitions
+- Chunked by logical staging sections
+
+### RAG Format
+- **Primary files:**
+  - `Staging Cards 9th Edition 2024_rag_documents.json` - 44 document chunks
+  - `Staging Cards 9th Edition 2024_statistics.json` - Processing metadata
+
+### Use Cases
+- Accurate cancer staging determination
+- Understanding TNM classification criteria
+- Comparing staging between cancer types
+- Training on standardized staging terminology
+- Clinical decision support for oncology
+- Research on staging-based outcomes
+
+---
+
+## 5. PubMed Research Literature (1968-2025)
 
 **Source:** PubMed abstracts via NCBI E-utilities  
 **Location:** `data/pubmed_abstracts/processed/`
@@ -245,7 +283,8 @@ For embedding optimization:
 
 **Processing:**
 - PubMed abstracts → RAG documents and text chunks
-- PDF guidelines → chunked RAG documents
+- PDF guidelines (RECIST/iRECIST) → chunked RAG documents
+- TNM staging cards → chunked RAG documents
 - Smart skip logic (automatically skips already downloaded/processed data)
 
 **Features:**
@@ -301,9 +340,10 @@ For embedding optimization:
 |--------|-----------|-------------------|-------------|
 | **RadLex** | 22,747 terms | 1,800 definitions, 8,237 synonyms | ~22,747 |
 | **LOINC** | 6,973 procedures | 190,215 synonyms, full RadLex mapping | ~6,973 |
-| **RECIST 1.1** | 79 chunks | 20 pages, 43 sections | 79 |
+| **RECIST 1.1** | 79 chunks | 20 pages, EORTC guidelines | 79 |
+| **TNM 9th Ed** | 44 chunks | 44 pages, AJCC/UICC 2024 staging | 44 |
 | **PubMed** | 292,298 abstracts | 29 journals, 1968-2025, 57 years | 643,910 |
-| **TOTAL** | **~322,097** | | **~673,709** |
+| **TOTAL** | **~322,141** | | **~673,753** |
 
 ---
 
@@ -338,6 +378,7 @@ python rag_pipeline.py --process-only
 # Specific components
 python rag_pipeline.py fetch-terminology
 python rag_pipeline.py process-pdfs
+python rag_pipeline.py process-tnm  # Process TNM staging cards
 ```
 
 ### Updating Terminology
@@ -377,6 +418,11 @@ Edit the `RSNA_JOURNALS`, `TOP_RAD_JOURNALS`, or `ONCOLOGY_JOURNALS` lists in th
 - European Organisation for Research and Treatment of Cancer (EORTC)
 - Published: European Journal of Cancer
 - Citation: Eisenhauer EA, et al. Eur J Cancer. 2009;45(2):228-247
+
+### TNM 9th Edition
+- American Joint Committee on Cancer (AJCC) / Union for International Cancer Control (UICC)
+- TNM Classification of Malignant Tumours, 9th Edition, 2024
+- Copyright: AJCC/UICC
 
 ### PubMed
 - National Library of Medicine (NLM)

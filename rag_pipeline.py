@@ -66,6 +66,7 @@ class Config:
     RADLEX_DIR = DATA_DIR / "radlex"
     LOINC_DIR = DATA_DIR / "loinc"
     GUIDELINES_DIR = DATA_DIR / "guidelines"
+    TNM_DIR = DATA_DIR / "tnm9ed"
     PUBMED_DIR = DATA_DIR / "pubmed_abstracts"
     
     # NCBI Configuration
@@ -1007,21 +1008,45 @@ class PDFProcessor:
         pdf_files = list(self.config.GUIDELINES_DIR.glob("*.pdf"))
         
         if not pdf_files:
-            Logger.warning("No PDF files found")
+            Logger.warning("No PDF files found in guidelines directory")
+        
+        results = []
+        for pdf_file in pdf_files:
+            result = self.process_pdf(pdf_file, skip_if_exists, output_dir=self.config.GUIDELINES_DIR / "processed")
+            if result:
+                results.append(result)
+        
+        Logger.success(f"Processed {len(results)} guideline PDF(s)")
+        return results
+    
+    def process_tnm(self, skip_if_exists=True):
+        """Process TNM staging cards"""
+        Logger.section("PROCESSING TNM STAGING CARDS FOR RAG")
+        
+        if not PYMUPDF_AVAILABLE and not PYPDF2_AVAILABLE:
+            Logger.error("No PDF library available. Install: pip install pymupdf")
+            return []
+        
+        pdf_files = list(self.config.TNM_DIR.glob("*.pdf"))
+        
+        if not pdf_files:
+            Logger.warning("No TNM PDF files found")
             return []
         
         results = []
         for pdf_file in pdf_files:
-            result = self.process_pdf(pdf_file, skip_if_exists)
+            result = self.process_pdf(pdf_file, skip_if_exists, output_dir=self.config.TNM_DIR / "processed", doc_type="staging")
             if result:
                 results.append(result)
         
-        Logger.success(f"Processed {len(results)} PDF(s)")
+        Logger.success(f"Processed {len(results)} TNM staging PDF(s)")
         return results
     
-    def process_pdf(self, pdf_path: Path, skip_if_exists=True):
+    def process_pdf(self, pdf_path: Path, skip_if_exists=True, output_dir: Path = None, doc_type: str = "guideline"):
         """Process a single PDF file"""
-        output_dir = self.config.GUIDELINES_DIR / "processed"
+        if output_dir is None:
+            output_dir = self.config.GUIDELINES_DIR / "processed"
+        
         output_file = output_dir / f"{pdf_path.stem}_rag_documents.json"
         
         # Check if already processed
@@ -1038,7 +1063,7 @@ class PDFProcessor:
         chunks = self._chunk_by_paragraphs(pages)
         
         # Create RAG documents
-        documents = self._create_rag_documents(chunks, pdf_path.stem)
+        documents = self._create_rag_documents(chunks, pdf_path.stem, doc_type)
         
         # Save
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -1046,8 +1071,20 @@ class PDFProcessor:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(documents, f, indent=2, ensure_ascii=False)
         
-        Logger.success(f"  {pdf_path.stem}: {len(chunks)} chunks")
-        return {'file': pdf_path.name, 'chunks': len(chunks)}
+        # Save statistics
+        stats = {
+            'source_file': pdf_path.name,
+            'total_pages': len(pages),
+            'total_chunks': len(chunks),
+            'avg_chunk_size': round(sum(len(c['text']) for c in chunks) / len(chunks), 1) if chunks else 0,
+            'document_type': doc_type
+        }
+        
+        with open(output_dir / f"{pdf_path.stem}_statistics.json", 'w', encoding='utf-8') as f:
+            json.dump(stats, f, indent=2)
+        
+        Logger.success(f"  {pdf_path.stem}: {len(chunks)} chunks from {len(pages)} pages")
+        return {'file': pdf_path.name, 'chunks': len(chunks), 'pages': len(pages)}
     
     def _extract_text(self, pdf_path: Path) -> List[Dict]:
         """Extract text from PDF"""
@@ -1099,7 +1136,7 @@ class PDFProcessor:
         
         return chunks
     
-    def _create_rag_documents(self, chunks: List[Dict], source_name: str) -> List[Dict]:
+    def _create_rag_documents(self, chunks: List[Dict], source_name: str, doc_type: str = "guideline") -> List[Dict]:
         """Create RAG documents from chunks"""
         documents = []
         for chunk in chunks:
@@ -1108,7 +1145,7 @@ class PDFProcessor:
                 'text': chunk['text'],
                 'metadata': {
                     'source': source_name,
-                    'type': 'guideline',
+                    'type': doc_type,
                     'page': chunk['page']
                 }
             }
@@ -1149,6 +1186,7 @@ class RAGPipeline:
         self.abstract_processor.process_all()
         self.term_processor.process_all()
         self.pdf_processor.process_all()
+        self.pdf_processor.process_tnm()
         
         Logger.success("All data sources processed")
     
@@ -1187,6 +1225,7 @@ Examples:
   python rag_pipeline.py process-abstracts
   python rag_pipeline.py process-terminology
   python rag_pipeline.py process-pdfs
+  python rag_pipeline.py process-tnm
         """
     )
     
@@ -1198,7 +1237,7 @@ Examples:
     # Individual commands
     parser.add_argument('commands', nargs='*', choices=[
         'fetch-all', 'fetch-journals', 'fetch-terminology',
-        'process-all', 'process-abstracts', 'process-terminology', 'process-pdfs'
+        'process-all', 'process-abstracts', 'process-terminology', 'process-pdfs', 'process-tnm'
     ], help='Specific commands to run')
     
     args = parser.parse_args()
@@ -1241,6 +1280,8 @@ Examples:
             pipeline.term_processor.process_all()
         elif cmd == 'process-pdfs':
             pipeline.pdf_processor.process_all()
+        elif cmd == 'process-tnm':
+            pipeline.pdf_processor.process_tnm()
 
 
 if __name__ == '__main__':
