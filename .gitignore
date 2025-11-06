@@ -45,8 +45,8 @@ data/guidelines/*.pdf
 data/pubmed_abstracts/*.csv
 
 # Keep processed directories but ignore their large JSON files
-data/**/processed/*.json
-data/**/processed/*.csv
+# data/**/processed/*.json
+# data/**/processed/*.csv
 !data/**/processed/*_statistics.json
 
 # Jupyter
