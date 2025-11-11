@@ -68,26 +68,60 @@ def main():
         results['loinc'] = {'status': 'failed', 'error': str(e), 'chunks': 0}
     
     # ========================================================================
-    # [3/4] Process TNM 9th Edition
+    # [3/4] Process TNM 9th Edition - Lung Cancer Protocol
     # ========================================================================
     print("\n" + "=" * 70)
-    print("[3/4] PROCESSING TNM 9TH EDITION")
+    print("[3/4] PROCESSING TNM 9TH EDITION - LUNG CANCER PROTOCOL")
     print("=" * 70)
     
     try:
-        tnm_pdf_files = list((data_dir / "tnm9ed").glob("*.pdf"))
-        if not tnm_pdf_files:
-            print(f"⚠️  No TNM PDF found in: {data_dir / 'tnm9ed'}")
+        # Use the new Lung Protocol PDF with staging criteria
+        tnm_pdf = data_dir / "tnm9ed" / "Lung_ Protocol for Cancer Staging Documentation.pdf"
+        
+        if not tnm_pdf.exists():
+            print(f"⚠️  Lung Protocol PDF not found: {tnm_pdf}")
             print("   Skipping TNM processing")
             results['tnm'] = {'status': 'skipped', 'chunks': 0}
         else:
-            tnm_pdf = tnm_pdf_files[0]
             print(f"   Processing: {tnm_pdf.name}")
             tnm_processor = TNMProcessor(tnm_pdf)
             tnm_chunks = tnm_processor.process()
             tnm_processor.save_chunks(output_dir / "tnm_chunks.jsonl")
-            print(f"\n✅ TNM: {len(tnm_chunks):,} chunks created")
-            results['tnm'] = {'status': 'success', 'chunks': len(tnm_chunks)}
+            print(f"\n✅ TNM Lung Cancer: {len(tnm_chunks):,} chunks created")
+            
+            # Collect detailed statistics
+            categories = {}
+            sections = set()
+            chunk_sizes = []
+            
+            for chunk in tnm_chunks:
+                cat = chunk.metadata.get('category', 'Unknown')
+                categories[cat] = categories.get(cat, 0) + 1
+                
+                section = chunk.metadata.get('section')
+                if section:
+                    sections.add(section)
+                
+                chunk_sizes.append(chunk.metadata.get('char_count', 0))
+            
+            results['tnm'] = {
+                'status': 'success',
+                'chunks': len(tnm_chunks),
+                'details': {
+                    'source_file': tnm_pdf.name,
+                    'cancer_type': 'Lung',
+                    'protocol_type': 'staging_documentation',
+                    'tnm_edition': '9th',
+                    'categories': categories,
+                    'major_sections': len(sections),
+                    'chunk_statistics': {
+                        'min_size': min(chunk_sizes) if chunk_sizes else 0,
+                        'max_size': max(chunk_sizes) if chunk_sizes else 0,
+                        'mean_size': round(sum(chunk_sizes) / len(chunk_sizes), 1) if chunk_sizes else 0,
+                        'total_chars': sum(chunk_sizes)
+                    }
+                }
+            }
     except Exception as e:
         print(f"\n❌ TNM processing failed: {e}")
         import traceback
@@ -158,6 +192,10 @@ def main():
             if result['status'] == 'success'
         ]
     }
+    
+    # Add detailed TNM information if available
+    if 'tnm' in results and 'details' in results['tnm']:
+        summary['tnm_details'] = results['tnm']['details']
     
     summary_file = output_dir / "processing_summary.json"
     with open(summary_file, 'w', encoding='utf-8') as f:

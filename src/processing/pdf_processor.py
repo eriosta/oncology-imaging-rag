@@ -1,9 +1,10 @@
 """
 PDF Processing Strategy:
-For TNM 9th Edition PDF:
-1. Extract tables as structured markdown (entire table = one chunk)
-2. Extract narrative sections with semantic chunking
-3. Preserve cancer type and staging category in metadata
+For TNM 9th Edition Lung Cancer Protocol PDF:
+1. Extract text with structure preservation
+2. Apply semantic chunking by sections (T/N/M classifications, staging rules)
+3. Preserve lung cancer staging criteria and category metadata
+4. Create contextually-rich chunks for RAG retrieval
 
 For RECIST PDF:
 1. Semantic chunking by section
@@ -30,7 +31,12 @@ from models.chunk import Chunk
 
 
 class TNMProcessor:
-    """Process TNM Staging PDF into structured chunks"""
+    """
+    Process TNM 9th Edition Lung Cancer Protocol PDF into structured chunks.
+    
+    Extracts lung cancer staging criteria including T/N/M classifications,
+    staging rules, and clinical criteria for accurate cancer staging.
+    """
     
     def __init__(self, pdf_path: Path):
         self.pdf_path = pdf_path
@@ -311,8 +317,8 @@ class TNMProcessor:
         return 'Unknown'
     
     def process(self) -> List[Chunk]:
-        """Process TNM PDF into chunks"""
-        print("\n   Processing TNM 9th Edition PDF...")
+        """Process TNM Lung Cancer Protocol PDF into chunks"""
+        print("\n   Processing TNM 9th Edition Lung Cancer Protocol PDF...")
         
         # Extract pages
         print("   Extracting pages...")
@@ -324,7 +330,7 @@ class TNMProcessor:
         structured = self.detect_structure(pages)
         
         headers = [e for e in structured if e['type'] == 'header']
-        print(f"   ✓ Found {len(headers)} headers (cancer sites)")
+        print(f"   ✓ Found {len(headers)} headers (staging sections)")
         
         # Create semantic chunks
         print("   Creating semantic chunks...")
@@ -333,22 +339,22 @@ class TNMProcessor:
         
         # Convert to Chunk objects
         for raw_chunk in raw_chunks:
-            cancer_type = self._identify_cancer_type(raw_chunk.get('section', ''))
             category = self._identify_category(raw_chunk.get('section', ''))
             
             chunk = Chunk(
-                chunk_id=f"tnm_{raw_chunk['id']}",
+                chunk_id=f"tnm_lung_{raw_chunk['id']}",
                 text=raw_chunk['text'],
-                source_type="tnm_table",
+                source_type="tnm_lung_protocol",
                 metadata={
                     "source_file": self.pdf_path.name,
                     "created_at": datetime.now().isoformat(),
                     "page": raw_chunk['page'],
-                    "cancer_type": cancer_type,
+                    "cancer_type": "Lung",
                     "category": category,
-                    "cancer_site": raw_chunk.get('section'),
-                    "staging_component": raw_chunk.get('subsection'),
+                    "section": raw_chunk.get('section'),
+                    "subsection": raw_chunk.get('subsection'),
                     "tnm_edition": "9th",
+                    "protocol_type": "staging_documentation",
                     "chunk_method": "semantic",
                     "char_count": raw_chunk['char_count']
                 }
