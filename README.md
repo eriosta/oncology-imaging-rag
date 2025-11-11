@@ -48,12 +48,13 @@ This pipeline integrates data from multiple authoritative medical sources:
 - Guidelines for response assessment during immunotherapy
 - Source: PMC/Lancet Oncology
 
-### 6. **TNM Cancer Staging 9th Edition** (44 chunks, 44 pages)
+### 6. **TNM Cancer Staging 9th Edition - Lung Cancer Protocol**
 - AJCC/UICC TNM Classification of Malignant Tumours (2024)
-- Global standard for cancer staging
-- T (tumor), N (node), M (metastasis) definitions
-- Site-specific staging criteria for major cancer types
-- Source: AJCC Staging Cards
+- Comprehensive lung cancer staging documentation
+- Detailed T (tumor), N (node), M (metastasis) definitions for lung cancer
+- Clinical and pathological staging criteria
+- Treatment recommendations and prognostic factors
+- Source: AJCC Lung Cancer Staging Protocol
 
 ## Output Format
 
@@ -183,10 +184,10 @@ For questions or issues:
 
 ## Updates
 
-### Latest Processing (October 2025)
+### Latest Processing (November 2025)
 - ✅ Fetched 292,298 abstracts from 29 journals (1968-2025)
 - ✅ Processed 643,910 text chunks
 - ✅ RadLex 22,747 terms ready
 - ✅ LOINC 6,973 procedures with synonyms ready
 - ✅ RECIST 1.1 guidelines processed
-- ✅ TNM 9th Edition staging cards processed (44 chunks)
+- ✅ TNM 9th Edition Lung Cancer Protocol with comprehensive staging criteria
