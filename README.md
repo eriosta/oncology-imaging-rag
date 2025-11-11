@@ -71,6 +71,8 @@ See [`RAG_CORPORA_DESCRIPTION.md`](RAG_CORPORA_DESCRIPTION.md) for detailed data
 
 - **[USAGE.md](USAGE.md)** - Complete usage guide with examples
 - **[RAG_CORPORA_DESCRIPTION.md](RAG_CORPORA_DESCRIPTION.md)** - Detailed data source descriptions
+- **[PIPELINE_SUMMARY.md](PIPELINE_SUMMARY.md)** - End-to-end implementation recap with architecture, metrics, and next steps
+- **[MARKDOWN_CHUNKING_GUIDE.md](MARKDOWN_CHUNKING_GUIDE.md)** - Overview of the markdown-specific chunking strategy with TNM results and best practices
 - **Individual scripts** - Each script has detailed docstrings
 
 ## Scripts Overview

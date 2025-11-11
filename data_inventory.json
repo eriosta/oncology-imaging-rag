@@ -1,0 +1,50 @@
+{
+  "recist_pdf": {
+    "path": "data/guidelines/RECIST_1.1_EORTC.pdf",
+    "size": "761 KB",
+    "pages": 20,
+    "format": "PDF",
+    "description": "RECIST 1.1 Guidelines from EORTC"
+  },
+  "tnm_pdf": {
+    "path": "data/tnm9ed/Staging Cards 9th Edition 2024.pdf",
+    "size": "16 MB",
+    "pages": 44,
+    "format": "PDF",
+    "description": "TNM Cancer Staging 9th Edition (2024)"
+  },
+  "loinc_zip": {
+    "path": "data/loinc/Loinc_2.81.zip",
+    "size": "78 MB",
+    "extraction_status": "Already extracted to data/loinc/extracted/",
+    "key_files": [
+      "AccessoryFiles/LoincRsnaRadiologyPlaybook/LoincRsnaRadiologyPlaybook.csv",
+      "LoincTable/Loinc.csv",
+      "loinc.xml"
+    ],
+    "description": "LOINC v2.81 with RSNA Radiology Playbook"
+  },
+  "radlex_zip": {
+    "path": "data/radlex/RadLex_OWL4.2.zip",
+    "size": "3.4 MB",
+    "extraction_status": "Already extracted to data/radlex/extracted/",
+    "key_files": [
+      "RadLex.owl"
+    ],
+    "description": "RadLex Ontology v4.2 in OWL format"
+  },
+  "processing_status": {
+    "radlex": "Processed - 22,747 terms in processed/radlex_rag_documents.json",
+    "loinc": "Processed - 6,973 procedures in processed/loinc_rag_documents.json",
+    "recist": "Not processed - processed/ directory empty",
+    "tnm": "Not processed - processed/ directory empty",
+    "pubmed": "Processed - 292K abstracts in processed/pubmed_abstracts_rag_documents.json"
+  },
+  "existing_scripts": {
+    "process_terminology.py": "Processes RadLex and LOINC from zip files",
+    "semantic_chunking.py": "Semantic chunking for RECIST and TNM PDFs",
+    "download_pipeline.py": "Downloads data from sources",
+    "qa_rag_data.py": "Quality assurance for processed RAG data"
+  },
+  "note": "LOINC and RadLex are already extracted and processed. RECIST and TNM need processing."
+}

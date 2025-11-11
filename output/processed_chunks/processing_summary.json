@@ -1,0 +1,21 @@
+{
+  "total_chunks": 53936,
+  "by_source": {
+    "radlex": 46838,
+    "loinc": 6973,
+    "tnm": 72,
+    "recist": 53
+  },
+  "status": {
+    "radlex": "success",
+    "loinc": "success",
+    "tnm": "success",
+    "recist": "success"
+  },
+  "output_files": [
+    "radlex_chunks.jsonl",
+    "loinc_chunks.jsonl",
+    "tnm_chunks.jsonl",
+    "recist_chunks.jsonl"
+  ]
+}

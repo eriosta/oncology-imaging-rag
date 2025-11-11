@@ -1,23 +1,7 @@
-# Core dependencies for fetching and processing RAG data
-
-# HTTP requests with retry logic
-requests>=2.31.0
-
-# PDF processing (recommended for best quality)
-pymupdf>=1.23.0
-
-# Alternative PDF processing (fallback)
-# PyPDF2>=3.0.0  # Uncomment if pymupdf fails to install
-
-# Standard library modules used (no install needed):
-# - csv
-# - json
-# - pathlib
-# - xml.etree.ElementTree
-# - re
-# - argparse
-# - subprocess
-# - datetime
-# - collections
-
-
+requests>=2.31.0           # HTTP requests with retry logic
+pymupdf>=1.23.0            # Primary PDF processing
+pdfplumber>=0.10.0         # Alternative PDF/table extraction
+pandas>=2.0.0              # Data wrangling for CSV/JSON outputs
+pydantic>=2.0.0            # Data validation and modeling
+tqdm>=4.65.0               # Progress bars for processing
+# PyPDF2>=3.0.0            # Optional fallback if PyMuPDF fails to install

@@ -34,15 +34,7 @@ env/
 .DS_Store
 
 # Data files (keep structure but ignore large files)
-data/radlex/*.owl
-data/radlex/*.xlsx
-data/radlex/*.json
-data/radlex/*.zip
-data/loinc/*.zip
-data/loinc/*.csv
-!data/loinc/LoincRsnaRadiologyPlaybookReadMe.txt
-data/guidelines/*.pdf
-data/pubmed_abstracts/*.csv
+data/
 
 # Keep processed directories but ignore their large JSON files
 # data/**/processed/*.json
