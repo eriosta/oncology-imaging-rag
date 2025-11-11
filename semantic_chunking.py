@@ -463,12 +463,12 @@ class SemanticChunker:
         return documents
     
     def process_tnm(self):
-        """Process TNM with semantic chunking"""
+        """Process TNM Lung Cancer Protocol with semantic chunking"""
         print("\n" + "="*70)
-        print("SEMANTIC CHUNKING: TNM 9th Edition")
+        print("SEMANTIC CHUNKING: TNM 9th Edition - Lung Cancer Protocol")
         print("="*70)
         
-        pdf_path = Path("data/tnm9ed/Staging Cards 9th Edition 2024.pdf").resolve()
+        pdf_path = Path("data/tnm9ed/Lung_ Protocol for Cancer Staging Documentation.pdf").resolve()
         output_dir = Path("data/tnm9ed/processed").resolve()
         
         if not pdf_path.exists():
@@ -527,7 +527,7 @@ class SemanticChunker:
         
         # Save
         output_dir.mkdir(parents=True, exist_ok=True)
-        output_file = output_dir / "Staging_Cards_9th_Edition_2024_rag_documents_semantic.json"
+        output_file = output_dir / "Lung_Protocol_9th_Edition_rag_documents_semantic.json"
         
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(documents, f, indent=2, ensure_ascii=False)
@@ -536,12 +536,12 @@ class SemanticChunker:
             'source_file': pdf_path.name,
             'total_pages': len(pages),
             'total_chunks': len(chunks),
-            'total_cancer_sites': len([h for h in headers if h['level'] == 1]),
+            'total_sections': len([h for h in headers if h['level'] == 1]),
             'chunking_method': 'semantic',
             'avg_chunk_size': sum(chunk_sizes) / len(chunks)
         }
         
-        with open(output_dir / "Staging_Cards_9th_Edition_2024_statistics_semantic.json", 'w', encoding='utf-8') as f:
+        with open(output_dir / "Lung_Protocol_9th_Edition_statistics_semantic.json", 'w', encoding='utf-8') as f:
             json.dump(stats, f, indent=2)
         
         print(f"\n✅ Saved: {output_file.name}")
