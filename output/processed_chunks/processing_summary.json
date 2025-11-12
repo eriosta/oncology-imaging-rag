@@ -1,9 +1,9 @@
 {
-  "total_chunks": 53936,
+  "total_chunks": 54073,
   "by_source": {
     "radlex": 46838,
     "loinc": 6973,
-    "tnm": 72,
+    "tnm": 209,
     "recist": 53
   },
   "status": {
@@ -17,5 +17,24 @@
     "loinc_chunks.jsonl",
     "tnm_chunks.jsonl",
     "recist_chunks.jsonl"
-  ]
+  ],
+  "tnm_details": {
+    "source_file": "Lung_ Protocol for Cancer Staging Documentation.pdf",
+    "cancer_type": "Lung",
+    "protocol_type": "staging_documentation",
+    "tnm_edition": "9th",
+    "categories": {
+      "Unknown": 199,
+      "TNM-staging": 1,
+      "M-staging": 8,
+      "N-staging": 1
+    },
+    "major_sections": 114,
+    "chunk_statistics": {
+      "min_size": 17,
+      "max_size": 4684,
+      "mean_size": 858.4,
+      "total_chars": 179405
+    }
+  }
 }
